@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pliny the Finder</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8">🍺 Pliny the Finder</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Rumor Form -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-bold mb-4">Report a Rumor</h2>
+                <form id="rumorForm" name="pliny-rumor" method="POST" data-netlify="true" class="space-y-4">
+                    <input type="hidden" name="form-name" value="pliny-rumor" />
+                    <div>
+                        <label class="block mb-1">Location</label>
+                        <input type="text" name="location" required class="w-full p-2 border rounded">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-1">Start Date</label>
+                            <input type="date" name="dateStart" required class="w-full p-2 border rounded">
+                        </div>
+                        <div>
+                            <label class="block mb-1">End Date</label>
+                            <input type="date" name="dateEnd" required class="w-full p-2 border rounded">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Submit Rumor</button>
+                </form>
+            </div>
+
+            <!-- Sighting Form -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-bold mb-4">Report a Sighting</h2>
+                <form id="sightingForm" name="pliny-sighting" method="POST" data-netlify="true" class="space-y-4">
+                    <input type="hidden" name="form-name" value="pliny-sighting" />
+                    <div>
+                        <label class="block mb-1">Location/Venue Name</label>
+                        <input type="text" name="location" required class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block mb-1">GPS Coordinates (optional)</label>
+                        <input type="text" name="gpsCoords" placeholder="e.g., 37.7749,-122.4194" class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block mb-1">Date Seen</label>
+                        <input type="date" name="dateSeen" required class="w-full p-2 border rounded">
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600">Submit Sighting</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="mt-12 text-center">
+            <p class="text-gray-600">
+                Submissions are processed by Netlify Forms. After submitting, check back later to see updates!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
